@@ -29,4 +29,15 @@ class MainViewModel @Inject constructor() : ViewModel() {
             _state.update { it.copy(isLoading = false, message = message) }
         }
     }
+
+
+    fun sendTestException() {
+//        val crashlytics = Firebase.crashlytics
+//        crashlytics.setCustomKeys {
+//            key("first_custom_key", "example of key")
+//        }
+//        crashlytics.recordException(Throwable("Example custom exception"))
+        throw RuntimeException()
+
+    }
 }

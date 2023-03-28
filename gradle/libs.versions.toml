@@ -1,4 +1,11 @@
 [versions]
+# Plugins
+androidGradlePlugin = "7.4.2"
+kotlinGradlePlugin = "1.8.10"
+hiltGradlePlugin = "2.43.1"
+detektGradlePlugin = "1.22.0"
+googleServicePlugin = "4.3.15"
+crashlyticsPlugin = "2.9.4"
 # Core
 kotlin = "1.7.10"
 compose = "1.4.0"
@@ -65,4 +72,10 @@ coroutine = ["coroutine.core", "coroutine.android"]
 retrofit = ["retrofit.core", "retrofit.gson"]
 
 [plugins]
-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinGradlePlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltGradlePlugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServicePlugin" }
+crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin" }

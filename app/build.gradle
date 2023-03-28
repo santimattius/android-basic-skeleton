@@ -1,9 +1,11 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    alias libs.plugins.android.application
+    alias libs.plugins.kotlin
     id 'kotlin-kapt'
-    id 'io.gitlab.arturbosch.detekt'
-    id 'com.google.dagger.hilt.android'
+    alias libs.plugins.detekt
+    alias libs.plugins.hilt
+    alias libs.plugins.google.services
+    alias libs.plugins.crashlytics
 }
 
 apply from: "$rootDir/gradle/coverage.gradle"
@@ -13,7 +15,7 @@ android {
     compileSdkVersion Integer.valueOf(target_sdk_version)
 
     defaultConfig {
-        applicationId application_id + '.app'
+        applicationId application_id
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
         versionCode Integer.valueOf(version_code)
@@ -88,6 +90,10 @@ dependencies {
     kapt libs.hilt.compiler
 
     implementation libs.coil.core
+
+    implementation platform('com.google.firebase:firebase-bom:31.3.0')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     testImplementation libs.junit
 

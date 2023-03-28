@@ -3,18 +3,21 @@ package com.santimattius.basic.skeleton
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Message
+import androidx.compose.material.icons.filled.Report
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.santimattius.basic.skeleton.ui.component.BasicSkeletonContainer
@@ -37,15 +40,27 @@ fun MainRoute(
     val state by viewModel.state.collectAsStateWithLifecycle()
     MainScreen(
         state = state,
-        onMainAction = viewModel::sayHello
+        onMainAction = viewModel::sayHello,
+        onReportAction = viewModel::sendTestException
     )
 }
 
 @Composable
-fun MainScreen(state: MainUiState, onMainAction: () -> Unit) {
+fun MainScreen(state: MainUiState, onMainAction: () -> Unit, onReportAction: () -> Unit) {
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) })
+            TopAppBar(
+                title = { Text(text = stringResource(id = R.string.app_name)) },
+                actions = {
+                    Icon(
+                        imageVector = Icons.Default.Report,
+                        contentDescription = "",
+                        modifier = Modifier
+                            .padding(horizontal = 12.dp)
+                            .clickable(onClick = onReportAction)
+                    )
+                }
+            )
         },
         floatingActionButton = {
             FloatingActionButton(onClick = onMainAction) {
@@ -75,8 +90,9 @@ fun MainScreen(state: MainUiState, onMainAction: () -> Unit) {
 @Composable
 fun DefaultPreview() {
     BasicSkeletonContainer {
-        MainScreen(MainUiState(isLoading = false, message = "Hello Android")) {
-
-        }
+        MainScreen(
+            state = MainUiState(isLoading = false, message = "Hello Android"),
+            onMainAction = {},
+            onReportAction = {})
     }
 }
