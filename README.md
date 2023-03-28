@@ -36,6 +36,11 @@ Release:
 > ./gradlew :app:testReleaseUnitTestCoverage
 ```
 
+## Firebase
+
+Create your Firebase project, checke here: https://firebase.google.com/docs/android/setup
+
+
 ## Dependencies
 
 Below you will find the libraries used to build the template and according to my criteria the most
