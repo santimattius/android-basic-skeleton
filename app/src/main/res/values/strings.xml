@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Basic Skeleton</string>
+    <string name="text_desc_main_action">Say Hello Android</string>
+</resources>

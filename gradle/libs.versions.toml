@@ -1,0 +1,68 @@
+[versions]
+# Core
+kotlin = "1.7.10"
+compose = "1.4.0"
+activityCompose = "1.7.0"
+coreKtx = "1.9.0"
+lifecycle = "2.6.1"
+retrofit = "2.9.0"
+coroutine = "1.6.4"
+gson = "2.10"
+hilt = "2.43.1"
+hiltCompose = "1.0.0"
+coil = "2.1.0"
+
+# Testing
+junit = "4.13.2"
+junitExt = "1.1.4"
+espressoCore = "3.5.0"
+
+[libraries]
+# Define the libraries
+# Lifecycle
+lifecycle_runtime_ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle_viewmodel_compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+lifecycle_runtime_compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+
+# Compose libraries
+compose_ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose_tooling_preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose_tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
+compose_material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose_icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
+compose_ui_test_junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+# Activity
+activity_compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+# Retrofit
+retrofit_core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit_gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+# Moshi
+gson_core = { module = "com.google.code.gson:gson", version.ref = "gson" }
+# Coil
+coil_core = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+# Coroutines
+coroutine_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
+coroutine_android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
+coroutine_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutine" }
+# Hilt
+hilt_android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hilt_navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompose" }
+# Android core
+core_ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+# Test
+junit = { module = "junit:junit", version.ref = "junit" }
+# AndroidTest
+test_ext = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
+test_espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+
+[bundles]
+# Define bundles/groups of libraries
+compose = ["compose.ui", "compose.material", "compose.tooling.preview", "compose.icons"]
+compose_debug = ["compose.tooling", "compose.ui.test.manifest"]
+coroutine = ["coroutine.core", "coroutine.android"]
+retrofit = ["retrofit.core", "retrofit.gson"]
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
