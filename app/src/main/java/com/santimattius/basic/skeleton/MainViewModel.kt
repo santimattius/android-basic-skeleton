@@ -31,6 +31,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
     }
 
 
+    @Suppress("ThrowingExceptionsWithoutMessageOrCause", "TooGenericExceptionThrown")
     fun sendTestException() {
 //        val crashlytics = Firebase.crashlytics
 //        crashlytics.setCustomKeys {
