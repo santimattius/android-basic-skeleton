@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/santimattius/android-basic-skeleton/branch/master/graph/badge.svg?token=HNW9TXKMQU)](https://codecov.io/gh/santimattius/android-basic-skeleton)
+
 # Android Basic Skeleton
 
 ## Verification
