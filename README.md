@@ -38,7 +38,7 @@ Release:
 
 ## Firebase
 
-Create your Firebase project, checke here: https://firebase.google.com/docs/android/setup
+Create your Firebase project, check here: https://firebase.google.com/docs/android/setup
 
 
 ## Dependencies
