@@ -41,25 +41,18 @@ fun MainRoute(
     MainScreen(
         state = state,
         onMainAction = viewModel::sayHello,
-        onReportAction = viewModel::sendTestException
     )
 }
 
 @Composable
-fun MainScreen(state: MainUiState, onMainAction: () -> Unit, onReportAction: () -> Unit) {
+fun MainScreen(
+    state: MainUiState,
+    onMainAction: () -> Unit,
+) {
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text(text = stringResource(id = R.string.app_name)) },
-                actions = {
-                    Icon(
-                        imageVector = Icons.Default.Report,
-                        contentDescription = "",
-                        modifier = Modifier
-                            .padding(horizontal = 12.dp)
-                            .clickable(onClick = onReportAction)
-                    )
-                }
             )
         },
         floatingActionButton = {
@@ -92,7 +85,6 @@ fun DefaultPreview() {
     BasicSkeletonContainer {
         MainScreen(
             state = MainUiState(isLoading = false, message = "Hello Android"),
-            onMainAction = {},
-            onReportAction = {})
+            onMainAction = {},)
     }
 }
