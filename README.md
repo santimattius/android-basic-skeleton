@@ -2,6 +2,8 @@
 
 # Android Basic Skeleton
 
+This is basic android project with essential configurations for  app develop in android.
+
 ## Verification
 
 Run check project:
