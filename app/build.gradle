@@ -80,8 +80,10 @@ dependencies {
     debugImplementation libs.bundles.compose.debug
 
     implementation libs.bundles.coroutine
+    testImplementation libs.coroutine.test
     implementation libs.bundles.retrofit
     implementation libs.gson.core
+    testImplementation libs.mockwebserver
 
     implementation libs.hilt.android
     implementation libs.hilt.navigation
