@@ -40,7 +40,9 @@ Release:
 
 ## Firebase
 
-Create your Firebase project, check here: https://firebase.google.com/docs/android/setup
+Create your Firebase project, check here: https://firebase.google.com/docs/android/setup.
+
+Project variation with Firebase Crashlytics, [here](https://github.com/santimattius/android-basic-skeleton/tree/with_crashlitycs)
 
 
 ## Dependencies
