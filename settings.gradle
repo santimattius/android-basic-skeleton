@@ -15,5 +15,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "android-basic-skeleton"
 include ':app'
-
-enableFeaturePreview("VERSION_CATALOGS")
