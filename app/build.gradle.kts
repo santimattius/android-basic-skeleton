@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin)
-    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
     alias(libs.plugins.detekt)
     alias(libs.plugins.hilt)
 }
@@ -57,7 +57,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.4"
+        kotlinCompilerExtensionVersion = extraString("compose_compiler")
     }
     packaging {
         resources {
@@ -83,6 +83,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.lifecycle.runtime.compose)
 
+    implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
     debugImplementation(libs.bundles.compose.debug)
 
@@ -94,7 +95,7 @@ dependencies {
 
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.coil.core)
 
@@ -104,8 +105,4 @@ dependencies {
     androidTestImplementation(libs.test.ext)
     androidTestImplementation(libs.test.espresso)
 
-}
-
-kapt {
-    correctErrorTypes = true
 }

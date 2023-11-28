@@ -1,28 +1,31 @@
 [versions]
 # Plugins
 androidGradlePlugin = "8.1.4"
-kotlinGradlePlugin = "1.8.10"
-hiltGradlePlugin = "2.45"
+kotlinGradlePlugin = "1.9.10"
+hiltGradlePlugin = "2.48.1"
 detektGradlePlugin = "1.22.0"
 googleServicePlugin = "4.3.15"
 crashlyticsPlugin = "2.9.4"
+ksp = "1.9.10-1.0.13"
 # Core
+androidxComposeBom = "2023.10.01"
 compose = "1.4.0"
-activityCompose = "1.7.0"
-coreKtx = "1.9.0"
-lifecycle = "2.6.1"
+activityCompose = "1.8.1"
+
+coreKtx = "1.12.0"
+lifecycle = "2.6.2"
 retrofit = "2.9.0"
-okHttp = "4.9.3"
-coroutine = "1.6.4"
-gson = "2.10"
-hilt = "2.45"
-hiltCompose = "1.0.0"
-coil = "2.1.0"
+okHttp = "4.11.0"
+coroutine = "1.7.3"
+gson = "2.10.1"
+hilt = "2.48.1"
+hiltCompose = "1.1.0"
+coil = "2.4.0"
 
 # Testing
 junit = "4.13.2"
-junitExt = "1.1.4"
-espressoCore = "3.5.0"
+junitExt = "1.1.5"
+espressoCore = "3.5.1"
 
 [libraries]
 # Define the libraries
@@ -32,13 +35,15 @@ lifecycle_viewmodel_compose = { module = "androidx.lifecycle:lifecycle-viewmodel
 lifecycle_runtime_compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 
 # Compose libraries
-compose_ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
-compose_tooling_preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
-compose_tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
-compose_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
-compose_material = { module = "androidx.compose.material:material", version.ref = "compose" }
-compose_icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
-compose_ui_test_junit = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+compose_ui = { group = "androidx.compose.ui", name = "ui" }
+compose_tooling_preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose_tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose_ui_test_manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose_material = { group = "androidx.compose.material", name = "material" }
+compose_icons = { group = "androidx.compose.material", name = "material-icons-extended" }
+compose_ui_test_junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+
 # Activity
 activity_compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 # Retrofit
@@ -80,3 +85,4 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltGradlePlugin"
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServicePlugin" }
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
