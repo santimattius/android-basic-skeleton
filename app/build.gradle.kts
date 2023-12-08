@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.detekt)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.google.secrets.gradle.plugin)
 }
 
 apply("$rootDir/gradle/coverage.gradle")

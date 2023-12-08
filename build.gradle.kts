@@ -6,5 +6,12 @@ plugins {
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.detekt) apply false
+    alias(libs.plugins.google.secrets.gradle.plugin) apply false
 }
 true
+
+buildscript {
+    dependencies {
+        classpath(libs.dep.google.secrets.gradle.plugin)
+    }
+}

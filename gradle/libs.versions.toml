@@ -7,6 +7,7 @@ detektGradlePlugin = "1.23.4"
 googleServicePlugin = "4.3.15"
 crashlyticsPlugin = "2.9.4"
 ksp = "1.9.21-1.0.15"
+googleSecretsPlugin = "2.0.1"
 # Core
 androidxComposeBom = "2023.10.01"
 compose = "1.4.0"
@@ -69,6 +70,8 @@ junit = { module = "junit:junit", version.ref = "junit" }
 # AndroidTest
 test_ext = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
 test_espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+##Plugins
+dep-google-secrets-gradle-plugin = { module = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
 
 [bundles]
 # Define bundles/groups of libraries
@@ -86,3 +89,4 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServicePlugin" }
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
