@@ -1,9 +1,9 @@
 [versions]
 # Plugins
 androidGradlePlugin = "8.1.4"
-kotlinGradlePlugin = "1.9.10"
+kotlinGradlePlugin = "1.9.21"
 hiltGradlePlugin = "2.49"
-detektGradlePlugin = "1.22.0"
+detektGradlePlugin = "1.23.4"
 googleServicePlugin = "4.3.15"
 crashlyticsPlugin = "2.9.4"
 ksp = "1.9.10-1.0.13"
@@ -18,7 +18,7 @@ retrofit = "2.9.0"
 okHttp = "4.11.0"
 coroutine = "1.7.3"
 gson = "2.10.1"
-hilt = "2.48.1"
+hilt = "2.49"
 hiltCompose = "1.1.0"
 coil = "2.4.0"
 
