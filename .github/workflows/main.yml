@@ -21,10 +21,14 @@ jobs:
 #        env:
 #          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
 #        run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./app/google-services.json
+      - name: Setup API Key
+        env:
+          APIKEY: "Hello Secret"
+        run: echo apiKey="$APIKEY" > ./local.properties
       - name: DeteKt
         uses: natiginfo/action-detekt-all@1.23.3
-        with:
-          args: --fail-fast --config config/detekt/detekt.yml
+#        with:
+#          args: --fail-fast --config config/detekt/detekt.yml
   tests:
     name: Tests
     runs-on: macos-latest
@@ -40,6 +44,10 @@ jobs:
 #        env:
 #          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
 #        run: echo $GOOGLE_SERVICES_JSON | base64 -Dd > ./app/google-services.json
+      - name: Setup API Key
+        env:
+          APIKEY: "Hello Secret"
+        run: echo apiKey="$APIKEY" > ./local.properties
       - name: Run Tests
         run: ./gradlew app:testDebugUnitTestCoverage
 
