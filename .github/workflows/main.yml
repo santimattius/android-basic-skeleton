@@ -17,12 +17,12 @@ jobs:
         with:
           fetch-depth: 1
           ref: ${{ github.head_ref }}
-      - name: Create Google Services JSON File
-        env:
-          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./app/google-services.json
+#      - name: Create Google Services JSON File
+#        env:
+#          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+#        run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./app/google-services.json
       - name: DeteKt
-        uses: natiginfo/action-detekt-all@1.20.0-RC1
+        uses: natiginfo/action-detekt-all@1.23.3
         with:
           args: --fail-fast --config config/detekt/detekt.yml
   tests:
@@ -34,11 +34,11 @@ jobs:
       - name: Set Up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: 11
-      - name: Create Google Services JSON File
-        env:
-          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: echo $GOOGLE_SERVICES_JSON | base64 -Dd > ./app/google-services.json
+          java-version: 17
+#      - name: Create Google Services JSON File
+#        env:
+#          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+#        run: echo $GOOGLE_SERVICES_JSON | base64 -Dd > ./app/google-services.json
       - name: Run Tests
         run: ./gradlew app:testDebugUnitTestCoverage
 

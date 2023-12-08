@@ -37,6 +37,7 @@ ext.excludes = [
         '**/*Dagger*.*',
         '**/*Hilt*.*',
         '**/*MembersInjector*.*',
+        '**/*GeneratedInjector*.*',
         '**/*_MembersInjector.class',
         '**/*_Factory*.*',
         '**/*_Provide*Factory*.*',
@@ -113,7 +114,7 @@ def createVariantCoverage(variant) {
 android {
     buildTypes {
         debug {
-            testCoverageEnabled true
+            testCoverageEnabled false
         }
     }
 }

@@ -27,8 +27,13 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        getByName("debug"){
             isMinifyEnabled = false
+            enableUnitTestCoverage = false
+            enableAndroidTestCoverage = false
+        }
+        getByName("release") {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -99,8 +104,10 @@ dependencies {
 
     implementation(libs.coil.core)
 
+    testImplementation(platform(libs.compose.bom))
     testImplementation(libs.junit)
 
+    androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.compose.ui.test.junit)
     androidTestImplementation(libs.test.ext)
     androidTestImplementation(libs.test.espresso)
