@@ -77,7 +77,7 @@ fun extraString(key: String): String {
 }
 
 detekt {
-    config = files("${project.rootDir}/config/detekt/detekt.yml")
+    config.setFrom("${project.rootDir}/config/detekt/detekt.yml")
     baseline = file("$rootDir/detekt-baseline.xml")
     autoCorrect = true
 }

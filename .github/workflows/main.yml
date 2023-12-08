@@ -34,7 +34,8 @@ jobs:
       - name: Set Up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: 17
+          distribution: 'zulu'
+          java-version: '17'
 #      - name: Create Google Services JSON File
 #        env:
 #          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
