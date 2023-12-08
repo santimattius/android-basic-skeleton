@@ -3,7 +3,7 @@
 androidGradlePlugin = "8.1.4"
 kotlinGradlePlugin = "1.9.21"
 hiltGradlePlugin = "2.48.1"
-detektGradlePlugin = "1.22.0"
+detektGradlePlugin = "1.23.4"
 googleServicePlugin = "4.3.15"
 crashlyticsPlugin = "2.9.4"
 ksp = "1.9.10-1.0.13"
