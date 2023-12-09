@@ -111,11 +111,3 @@ def createVariantCoverage(variant) {
     }
 }
 
-android {
-    buildTypes {
-        debug {
-            testCoverageEnabled false
-        }
-    }
-}
-
