@@ -27,8 +27,8 @@ jobs:
         run: echo apiKey="$APIKEY" > ./local.properties
       - name: DeteKt
         uses: natiginfo/action-detekt-all@1.23.3
-#        with:
-#          args: --fail-fast --config config/detekt/detekt.yml
+        with:
+          args: --config config/detekt/detekt.yml
   tests:
     name: Tests
     runs-on: macos-latest
