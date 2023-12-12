@@ -1,11 +1,11 @@
 [versions]
 # Plugins
-androidGradlePlugin = "8.1.4"
+androidGradlePlugin = "8.2.0"
 kotlinGradlePlugin = "1.9.21"
 hiltGradlePlugin = "2.49"
 detektGradlePlugin = "1.23.4"
-googleServicePlugin = "4.3.15"
-crashlyticsPlugin = "2.9.4"
+googleServicePlugin = "4.4.0"
+crashlyticsPlugin = "2.9.9"
 ksp = "1.9.21-1.0.15"
 googleSecretsPlugin = "2.0.1"
 # Core
