@@ -1,6 +1,6 @@
 [versions]
 # Plugins
-androidGradlePlugin = "8.2.0"
+androidGradlePlugin = "8.2.1"
 kotlinGradlePlugin = "1.9.22"
 hiltGradlePlugin = "2.50"
 detektGradlePlugin = "1.23.4"
@@ -11,10 +11,10 @@ googleSecretsPlugin = "2.0.1"
 # Core
 androidxComposeBom = "2023.10.01"
 compose = "1.4.0"
-activityCompose = "1.8.1"
+activityCompose = "1.8.2"
 
 coreKtx = "1.12.0"
-lifecycle = "2.6.2"
+lifecycle = "2.7.0"
 retrofit = "2.9.0"
 okHttp = "4.12.0"
 coroutine = "1.7.3"
