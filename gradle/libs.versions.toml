@@ -6,7 +6,7 @@ hiltGradlePlugin = "2.50"
 detektGradlePlugin = "1.23.5"
 googleServicePlugin = "4.4.1"
 crashlyticsPlugin = "2.9.9"
-ksp = "1.9.22-1.0.17"
+ksp = "1.9.22-1.0.18"
 googleSecretsPlugin = "2.0.1"
 # Core
 androidxComposeBom = "2024.02.00"
