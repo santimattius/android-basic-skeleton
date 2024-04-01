@@ -2,7 +2,7 @@
 # Plugins
 androidGradlePlugin = "8.3.0"
 kotlinGradlePlugin = "1.9.22"
-hiltGradlePlugin = "2.50"
+hiltGradlePlugin = "2.51.1"
 detektGradlePlugin = "1.23.5"
 googleServicePlugin = "4.4.1"
 crashlyticsPlugin = "2.9.9"
