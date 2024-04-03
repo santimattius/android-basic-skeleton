@@ -9,7 +9,7 @@ crashlyticsPlugin = "2.9.9"
 ksp = "1.9.23-1.0.19"
 googleSecretsPlugin = "2.0.1"
 # Core
-androidxComposeBom = "2024.03.00"
+androidxComposeBom = "2024.04.00"
 compose = "1.4.0"
 activityCompose = "1.8.2"
 

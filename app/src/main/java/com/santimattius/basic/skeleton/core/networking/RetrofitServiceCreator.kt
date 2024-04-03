@@ -17,5 +17,5 @@ class RetrofitServiceCreator(val baseUrl: String) {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    inline fun <reified T> create() = retrofit.create<T>()
+    inline fun <reified T : Any> create() = retrofit.create<T>()
 }
