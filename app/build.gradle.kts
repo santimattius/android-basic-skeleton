@@ -1,3 +1,5 @@
+import com.automattic.android.measure.reporters.SlowSlowTasksMetricsReporter
+
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application)
@@ -6,6 +8,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.hilt)
     alias(libs.plugins.google.secrets.gradle.plugin)
+    alias(libs.plugins.automattic.measure.builds)
 }
 
 apply("$rootDir/gradle/coverage.gradle")
@@ -28,7 +31,7 @@ android {
     }
 
     buildTypes {
-        getByName("debug"){
+        getByName("debug") {
             isMinifyEnabled = false
             enableUnitTestCoverage = true
             enableAndroidTestCoverage = true
@@ -80,6 +83,15 @@ detekt {
     config.setFrom("${project.rootDir}/config/detekt/detekt.yml")
     baseline = file("$rootDir/detekt-baseline.xml")
     autoCorrect = true
+}
+
+measureBuilds {
+    enable = true
+    attachGradleScanId =
+        false // `false`, if no Enterprise plugin applied OR don't want to attach build scan id
+    onBuildMetricsReadyListener {
+        SlowSlowTasksMetricsReporter.report(this)
+    }
 }
 
 dependencies {

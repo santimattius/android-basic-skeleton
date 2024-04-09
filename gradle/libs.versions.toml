@@ -8,6 +8,7 @@ googleServicePlugin = "4.4.1"
 crashlyticsPlugin = "2.9.9"
 ksp = "1.9.23-1.0.20"
 googleSecretsPlugin = "2.0.1"
+automatticMeasureBuilds = "3.0.0"
 # Core
 androidxComposeBom = "2024.04.00"
 compose = "1.4.0"
@@ -90,3 +91,5 @@ google-services = { id = "com.google.gms.google-services", version.ref = "google
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
+automattic-measure-builds = { id = "com.automattic.android.measure-builds", version.ref = "automatticMeasureBuilds" }
+
