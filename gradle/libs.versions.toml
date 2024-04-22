@@ -12,7 +12,7 @@ automatticMeasureBuilds = "3.0.0"
 # Core
 androidxComposeBom = "2024.04.00"
 compose = "1.4.0"
-activityCompose = "1.8.2"
+activityCompose = "1.9.0"
 
 coreKtx = "1.12.0"
 lifecycle = "2.7.0"
