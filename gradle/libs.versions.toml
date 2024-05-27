@@ -6,12 +6,11 @@ hiltGradlePlugin = "2.51.1"
 detektGradlePlugin = "1.23.6"
 googleServicePlugin = "4.4.1"
 crashlyticsPlugin = "3.0.1"
-ksp = "1.9.23-1.0.20"
+ksp = "2.0.0-1.0.21"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.0.0"
 # Core
 androidxComposeBom = "2024.05.00"
-compose = "1.4.0"
 activityCompose = "1.9.0"
 
 coreKtx = "1.13.1"
@@ -76,10 +75,10 @@ dep-google-secrets-gradle-plugin = { module = "com.google.android.libraries.maps
 
 [bundles]
 # Define bundles/groups of libraries
-compose = ["compose.ui", "compose.material", "compose.tooling.preview", "compose.icons"]
-compose_debug = ["compose.tooling", "compose.ui.test.manifest"]
-coroutine = ["coroutine.core", "coroutine.android"]
-retrofit = ["retrofit.core", "retrofit.gson"]
+compose = ["compose_ui", "compose_material", "compose_tooling_preview", "compose_icons"]
+compose_debug = ["compose_tooling", "compose_ui_test_manifest"]
+coroutine = ["coroutine_core", "coroutine_android"]
+retrofit = ["retrofit_core", "retrofit_gson"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -92,4 +91,5 @@ crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyti
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
 automattic-measure-builds = { id = "com.automattic.android.measure-builds", version.ref = "automatticMeasureBuilds" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinGradlePlugin" }
 
