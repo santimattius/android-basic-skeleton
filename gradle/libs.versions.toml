@@ -6,7 +6,7 @@ hiltGradlePlugin = "2.51.1"
 detektGradlePlugin = "1.23.6"
 googleServicePlugin = "4.4.2"
 crashlyticsPlugin = "3.0.1"
-ksp = "2.0.0-1.0.21"
+ksp = "2.0.0-1.0.22"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.0.0"
 # Core
