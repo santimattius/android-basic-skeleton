@@ -1,8 +1,8 @@
 package com.santimattius.basic.skeleton.ui.component
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
@@ -15,7 +15,7 @@ fun BasicSkeletonContainer(content: @Composable () -> Unit) {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colors.background
+            color = MaterialTheme.colorScheme.background
         ) {
             //TODO: workaround ISSUE: https://issuetracker.google.com/issues/336842920
             CompositionLocalProvider(

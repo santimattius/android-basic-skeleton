@@ -14,4 +14,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "android-basic-skeleton"
-include ':app'
+include(":app")

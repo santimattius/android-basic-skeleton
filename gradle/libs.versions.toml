@@ -41,7 +41,7 @@ compose_ui = { group = "androidx.compose.ui", name = "ui" }
 compose_tooling_preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose_tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose_ui_test_manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-compose_material = { group = "androidx.compose.material", name = "material" }
+compose_material3 = { group = "androidx.compose.material3", name = "material3" }
 compose_icons = { group = "androidx.compose.material", name = "material-icons-extended" }
 compose_ui_test_junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 
@@ -75,7 +75,7 @@ dep-google-secrets-gradle-plugin = { module = "com.google.android.libraries.maps
 
 [bundles]
 # Define bundles/groups of libraries
-compose = ["compose_ui", "compose_material", "compose_tooling_preview", "compose_icons"]
+compose = ["compose_ui", "compose_material3", "compose_tooling_preview", "compose_icons"]
 compose_debug = ["compose_tooling", "compose_ui_test_manifest"]
 coroutine = ["coroutine_core", "coroutine_android"]
 retrofit = ["retrofit_core", "retrofit_gson"]
