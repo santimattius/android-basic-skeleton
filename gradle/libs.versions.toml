@@ -28,6 +28,8 @@ junit = "4.13.2"
 junitExt = "1.1.5"
 espressoCore = "3.5.1"
 
+invertVersion="0.0.1-dev-SNAPSHOT"
+
 [libraries]
 # Define the libraries
 # Lifecycle
@@ -92,4 +94,5 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
 automattic-measure-builds = { id = "com.automattic.android.measure-builds", version.ref = "automatticMeasureBuilds" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinGradlePlugin" }
+invert-report = { id = "com.squareup.invert", version.ref = "invertVersion" }
 
