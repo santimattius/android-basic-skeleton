@@ -10,7 +10,7 @@ ksp = "2.0.0-1.0.22"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.0.0"
 # Core
-androidxComposeBom = "2024.05.00"
+androidxComposeBom = "2024.06.00"
 activityCompose = "1.9.0"
 
 coreKtx = "1.13.1"
