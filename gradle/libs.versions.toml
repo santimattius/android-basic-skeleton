@@ -8,7 +8,7 @@ googleServicePlugin = "4.4.2"
 crashlyticsPlugin = "3.0.1"
 ksp = "2.0.0-1.0.22"
 googleSecretsPlugin = "2.0.1"
-automatticMeasureBuilds = "3.0.0"
+automatticMeasureBuilds = "3.1.0"
 # Core
 androidxComposeBom = "2024.06.00"
 activityCompose = "1.9.0"
