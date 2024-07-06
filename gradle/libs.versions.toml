@@ -26,7 +26,7 @@ coil = "2.6.0"
 # Testing
 junit = "4.13.2"
 junitExt = "1.1.5"
-espressoCore = "3.5.1"
+espressoCore = "3.6.1"
 
 [libraries]
 # Define the libraries
