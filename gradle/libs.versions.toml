@@ -21,7 +21,7 @@ coroutine = "1.8.1"
 gson = "2.11.0"
 hilt = "2.51.1"
 hiltCompose = "1.2.0"
-coil = "2.6.0"
+coil = "2.7.0"
 
 # Testing
 junit = "4.13.2"
