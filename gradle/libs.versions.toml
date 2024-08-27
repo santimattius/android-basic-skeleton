@@ -1,7 +1,7 @@
 [versions]
 # Plugins
 androidGradlePlugin = "8.5.2"
-kotlinGradlePlugin = "2.0.10"
+kotlinGradlePlugin = "2.0.20"
 hiltGradlePlugin = "2.52"
 
 detektGradlePlugin = "1.23.6"
