@@ -63,7 +63,7 @@ jobs:
           name: report
           path: app/build/reports/jacoco/testDebugUnitTestCoverage
       - name: Upload Test Report
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: app/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml # optional
