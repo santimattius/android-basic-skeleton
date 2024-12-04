@@ -17,3 +17,4 @@ local.properties
 # Project exclude paths
 /plugins/build/
 /.kotlin/
+.idea
