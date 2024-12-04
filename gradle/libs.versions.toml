@@ -1,13 +1,13 @@
 [versions]
 # Plugins
 androidGradlePlugin = "8.7.3"
-kotlinGradlePlugin = "2.0.21"
+kotlinGradlePlugin = "2.1.0"
 hiltGradlePlugin = "2.52"
 
 detektGradlePlugin = "1.23.7"
 googleServicePlugin = "4.4.2"
 crashlyticsPlugin = "3.0.2"
-ksp = "2.0.21-1.0.28"
+ksp = "2.1.0-1.0.29"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.1.1"
 # Core
