@@ -17,4 +17,18 @@ local.properties
 # Project exclude paths
 /plugins/build/
 /.kotlin/
-.idea
+/.idea/
+/.idea/inspectionProfiles/
+/.idea/.gitignore
+/.idea/appInsightsSettings.xml
+/.idea/compiler.xml
+/.idea/deploymentTargetDropDown.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/gradle.xml
+/.idea/jarRepositories.xml
+/.idea/kotlinc.xml
+/.idea/migrations.xml
+/.idea/misc.xml
+/.idea/runConfigurations.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
