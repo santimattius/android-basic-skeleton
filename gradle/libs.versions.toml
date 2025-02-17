@@ -1,6 +1,6 @@
 [versions]
 # Plugins
-androidGradlePlugin = "8.8.0"
+androidGradlePlugin = "8.8.1"
 kotlinGradlePlugin = "2.1.10"
 hiltGradlePlugin = "2.55"
 
