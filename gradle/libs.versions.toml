@@ -4,7 +4,7 @@ androidGradlePlugin = "8.8.1"
 kotlinGradlePlugin = "2.1.10"
 hiltGradlePlugin = "2.55"
 
-detektGradlePlugin = "1.23.7"
+detektGradlePlugin = "1.23.8"
 googleServicePlugin = "4.4.2"
 crashlyticsPlugin = "3.0.3"
 ksp = "2.1.10-1.0.30"
