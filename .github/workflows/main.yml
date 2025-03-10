@@ -26,7 +26,7 @@ jobs:
           APIKEY: "Hello Secret"
         run: echo apiKey="$APIKEY" > ./local.properties
       - name: DeteKt
-        uses: natiginfo/action-detekt-all@1.23.7
+        uses: natiginfo/action-detekt-all@1.23.8
         with:
           args: --config config/detekt/detekt.yml
   tests:
