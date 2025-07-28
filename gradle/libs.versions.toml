@@ -18,7 +18,7 @@ coreKtx = "1.16.0"
 lifecycle = "2.9.1"
 
 retrofit = "3.0.0"
-okHttp = "4.12.0"
+okHttp = "5.1.0"
 coroutine = "1.10.2"
 gson = "2.13.1"
 hilt = "2.56.2"
