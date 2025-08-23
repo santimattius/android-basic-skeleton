@@ -1,20 +1,20 @@
 [versions]
 # Plugins
-androidGradlePlugin = "8.11.0"
+androidGradlePlugin = "8.12.1"
 kotlinGradlePlugin = "2.2.10"
 hiltGradlePlugin = "2.57"
 
 detektGradlePlugin = "1.23.8"
 googleServicePlugin = "4.4.3"
 crashlyticsPlugin = "3.0.6"
-ksp = "2.2.0-2.0.2"
+ksp = "2.2.10-2.0.2"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.1"
 # Core
-androidxComposeBom = "2025.07.00"
+androidxComposeBom = "2025.08.00"
 activityCompose = "1.10.1"
 
-coreKtx = "1.16.0"
+coreKtx = "1.17.0"
 lifecycle = "2.9.2"
 
 retrofit = "3.0.0"
