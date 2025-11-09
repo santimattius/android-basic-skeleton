@@ -1,24 +1,21 @@
 [versions]
 # Plugins
 androidGradlePlugin = "8.13.0"
-kotlinGradlePlugin = "2.2.20"
-hiltGradlePlugin = "2.57.2"
+kotlinGradlePlugin = "2.2.21"
 
 detektGradlePlugin = "1.23.8"
-googleServicePlugin = "4.4.4"
-crashlyticsPlugin = "3.0.6"
 ksp = "2.3.0"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.2"
 # Core
-androidxComposeBom = "2025.10.01"
+androidxComposeBom = "2025.11.00"
 activityCompose = "1.11.0"
 
 coreKtx = "1.17.0"
 lifecycle = "2.9.4"
 
 retrofit = "3.0.0"
-okHttp = "5.2.1"
+okHttp = "5.3.0"
 coroutine = "1.10.2"
 gson = "2.13.2"
 hilt = "2.57.2"
@@ -86,10 +83,8 @@ retrofit = ["retrofit_core", "retrofit_gson"]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinGradlePlugin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltGradlePlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
-google-services = { id = "com.google.gms.google-services", version.ref = "googleServicePlugin" }
-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
 automattic-measure-builds = { id = "com.automattic.android.measure-builds", version.ref = "automatticMeasureBuilds" }
