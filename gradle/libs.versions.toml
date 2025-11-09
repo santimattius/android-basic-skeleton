@@ -5,7 +5,7 @@ kotlinGradlePlugin = "2.2.20"
 hiltGradlePlugin = "2.57.2"
 
 detektGradlePlugin = "1.23.8"
-googleServicePlugin = "4.4.3"
+googleServicePlugin = "4.4.4"
 crashlyticsPlugin = "3.0.6"
 ksp = "2.2.20-2.0.3"
 googleSecretsPlugin = "2.0.1"
