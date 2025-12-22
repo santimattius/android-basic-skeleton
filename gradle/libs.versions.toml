@@ -9,7 +9,7 @@ googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.2"
 # Core
 androidxComposeBom = "2025.12.00"
-activityCompose = "1.12.1"
+activityCompose = "1.12.2"
 
 coreKtx = "1.17.0"
 lifecycle = "2.10.0"
