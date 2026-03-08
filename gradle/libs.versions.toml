@@ -1,10 +1,10 @@
 [versions]
 # Plugins
 androidGradlePlugin = "9.1.0"
-kotlinGradlePlugin = "2.2.10"
+kotlinGradlePlugin = "2.3.10"
 
 detektGradlePlugin = "1.23.8"
-ksp = "2.3.2"
+ksp = "2.3.6"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.2"
 # Core
