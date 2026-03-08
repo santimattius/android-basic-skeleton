@@ -1,7 +1,7 @@
 apply plugin: 'jacoco'
 
 jacoco {
-    toolVersion = "0.8.8"
+    toolVersion = "0.8.12"
 }
 
 project.afterEvaluate {
@@ -48,7 +48,8 @@ def createVariantCoverage(variant) {
     def testTaskName = "test${variantName.capitalize()}UnitTest"
 
     // Add unit test coverage tasks
-    tasks.create(name: "${testTaskName}Coverage", type: JacocoReport, dependsOn: "$testTaskName") {
+    tasks.register("${testTaskName}Coverage", JacocoReport) {
+        dependsOn "$testTaskName"
         group = "Reporting"
         description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build."
 
@@ -57,8 +58,8 @@ def createVariantCoverage(variant) {
             html.required = true
         }
 
-        def javaClasses = fileTree(dir: variant.javaCompileProvider.get().destinationDir, excludes: project.excludes)
-        def kotlinClasses = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variantName}", excludes: project.excludes)
+        def javaClasses = fileTree(dir: variant.javaCompileProvider.get().destinationDirectory, excludes: project.excludes)
+        def kotlinClasses = fileTree(dir: "${project.layout.buildDirectory.get().asFile}/tmp/kotlin-classes/${variantName}", excludes: project.excludes)
         getClassDirectories().setFrom(files([javaClasses, kotlinClasses]))
 
         getSourceDirectories().setFrom(files([
@@ -68,10 +69,10 @@ def createVariantCoverage(variant) {
                 "$project.projectDir/src/${variantName}/kotlin"
         ]))
 
-        getExecutionData().setFrom(files("${project.buildDir}/outputs/unit_test_code_coverage/${variantName}UnitTest/${testTaskName}.exec"))
+        getExecutionData().setFrom(files("${project.layout.buildDirectory.get().asFile}/outputs/unit_test_code_coverage/${variantName}UnitTest/${testTaskName}.exec"))
 
         doLast {
-            def m = new File("${project.buildDir}/reports/jacoco/${testTaskName}Coverage/html/index.html")
+            def m = new File("${project.layout.buildDirectory.get().asFile}/reports/jacoco/${testTaskName}Coverage/html/index.html")
                     .text =~ /Total[^%]*>(\d?\d?\d?%)/
             if (m) {
                 println "Test coverage: ${m[0][1]}"
@@ -80,7 +81,8 @@ def createVariantCoverage(variant) {
     }
 
     // Add unit test coverage verification tasks
-    tasks.create(name: "${testTaskName}CoverageVerification", type: JacocoCoverageVerification, dependsOn: "${testTaskName}Coverage") {
+    tasks.register("${testTaskName}CoverageVerification", JacocoCoverageVerification) {
+        dependsOn "${testTaskName}Coverage"
         group = "Reporting"
         description = "Verifies Jacoco coverage for the ${variantName.capitalize()} build."
         violationRules {
@@ -98,8 +100,8 @@ def createVariantCoverage(variant) {
                 }
             }
         }
-        def javaClasses = fileTree(dir: variant.javaCompileProvider.get().destinationDir, excludes: project.excludes)
-        def kotlinClasses = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variantName}", excludes: project.excludes)
+        def javaClasses = fileTree(dir: variant.javaCompileProvider.get().destinationDirectory, excludes: project.excludes)
+        def kotlinClasses = fileTree(dir: "${project.layout.buildDirectory.get().asFile}/tmp/kotlin-classes/${variantName}", excludes: project.excludes)
         getClassDirectories().setFrom(files([javaClasses, kotlinClasses]))
         getSourceDirectories().setFrom(files([
                 "$project.projectDir/src/main/java",
@@ -107,7 +109,6 @@ def createVariantCoverage(variant) {
                 "$project.projectDir/src/main/kotlin",
                 "$project.projectDir/src/${variantName}/kotlin"
         ]))
-        getExecutionData().setFrom(files("${project.buildDir}/outputs/unit_test_code_coverage/${variantName}UnitTest/${testTaskName}.exec"))
+        getExecutionData().setFrom(files("${project.layout.buildDirectory.get().asFile}/outputs/unit_test_code_coverage/${variantName}UnitTest/${testTaskName}.exec"))
     }
 }
-

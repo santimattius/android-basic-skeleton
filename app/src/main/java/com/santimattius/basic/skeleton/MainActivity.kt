@@ -19,7 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.santimattius.basic.skeleton.ui.component.AppBar
 import com.santimattius.basic.skeleton.ui.component.BasicSkeletonContainer
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainRoute(
-    viewModel: MainViewModel = hiltViewModel(),
+    viewModel: MainViewModel = hiltViewModel<MainViewModel>(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     MainScreen(

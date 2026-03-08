@@ -1,10 +1,8 @@
 import com.automattic.android.measure.reporters.SlowSlowTasksMetricsReporter
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotlin)
     alias(libs.plugins.ksp)
     alias(libs.plugins.detekt)
     alias(libs.plugins.hilt)
@@ -52,7 +50,7 @@ android {
         }
         unitTests.all {
             testCoverage {
-                version = "0.8.8"
+                version = "0.8.12"
             }
         }
     }
@@ -60,9 +58,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
+
     buildFeatures {
         compose = true
     }
@@ -74,13 +70,17 @@ android {
     }
 }
 
+// Ensure compatibility with Kotlin 2.x
+kotlin {
+    jvmToolchain(17)
+}
+
 composeCompiler {
-    enableStrongSkippingMode = true
     reportsDestination = layout.buildDirectory.dir("compose_compiler")
 }
 
 fun extraString(key: String): String {
-    return extra[key] as String
+    return (extra[key] as? String) ?: ""
 }
 
 detekt {
