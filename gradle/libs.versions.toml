@@ -10,7 +10,7 @@ automatticMeasureBuilds = "3.2.2"
 # Core
 androidxComposeBom = "2026.02.01"
 activityCompose = "1.12.4"
-coreKtx = "1.17.0"
+coreKtx = "1.18.0"
 lifecycle = "2.10.0"
 
 retrofit = "3.0.0"
