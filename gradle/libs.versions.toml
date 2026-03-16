@@ -1,7 +1,7 @@
 [versions]
 # Plugins
 androidGradlePlugin = "9.1.0"
-kotlinGradlePlugin = "2.3.10"
+kotlinGradlePlugin = "2.3.20"
 
 detektGradlePlugin = "1.23.8"
 ksp = "2.3.6"
