@@ -26,8 +26,11 @@ jobs:
           APIKEY: "Hello Secret"
         run: echo apiKey="$APIKEY" > ./local.properties
       - name: DeteKt
-        uses: natiginfo/action-detekt-all@1.23.8
+        uses: natiginfo/action-detekt-all@v3
         with:
+          detekt-version: '1.23.8'
+          java-distribution: 'temurin'
+          java-version: '17'
           args: --config config/detekt/detekt.yml
   tests:
     name: Tests
@@ -49,24 +52,24 @@ jobs:
           APIKEY: "Hello Secret"
         run: echo apiKey="$APIKEY" > ./local.properties
       - name: Run Tests
-        run: ./gradlew app:testDebugUnitTestCoverage
+        run: ./gradlew app:createDebugUnitTestCoverageReport
 
       - name: Generate Report
         uses: actions/upload-artifact@v7
         with:
           name: report
-          path: app/build/reports/jacoco/testDebugUnitTestCoverage
+          path: app/build/reports/coverage/test/debug
 
       - name: Download Test Reports Folder
         uses: actions/download-artifact@v8
         with:
           name: report
-          path: app/build/reports/jacoco/testDebugUnitTestCoverage
+          path: app/build/reports/coverage/test/debug
       - name: Upload Test Report
         uses: codecov/codecov-action@v7
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: app/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml # optional
+          files: app/build/reports/coverage/test/debug/report.xml # optional
           flags: unittests
           name: pull-request
           fail_ci_if_error: true
