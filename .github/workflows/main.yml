@@ -31,7 +31,7 @@ jobs:
           detekt-version: '1.23.8'
           java-distribution: 'temurin'
           java-version: '17'
-          args: --config config/detekt/detekt.yml
+          args: --config config/detekt/detekt.yml --excludes "**/build/**,**/*.gradle.kts"
   tests:
     name: Tests
     runs-on: macos-latest
