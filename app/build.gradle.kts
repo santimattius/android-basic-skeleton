@@ -10,8 +10,6 @@ plugins {
     alias(libs.plugins.automattic.measure.builds)
 }
 
-apply("$rootDir/gradle/coverage.gradle")
-
 android {
     namespace = "com.santimattius.basic.skeleton"
     compileSdk = extraString("target_sdk_version").toInt()

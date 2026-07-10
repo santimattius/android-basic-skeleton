@@ -1,0 +1,12 @@
+ignore:
+  - "**/build/generated/**"
+  - "**/Hilt_*.java"
+  - "**/*_Hilt*.java"
+  - "**/*_HiltModules*.java"
+  - "**/*_HiltComponents*.java"
+  - "**/Dagger*.java"
+  - "**/*_Factory.java"
+  - "**/*_MembersInjector.java"
+  - "**/*_Provide*Factory.java"
+  - "**/*_GeneratedInjector.java"
+  - "**/BuildConfig.java"
