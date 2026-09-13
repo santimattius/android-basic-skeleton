@@ -63,6 +63,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     packaging {
@@ -160,6 +161,8 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(libs.coil.core)
+
+    debugImplementation(libs.leakcanary.android)
 
     testImplementation(platform(libs.compose.bom))
     testImplementation(libs.junit)
