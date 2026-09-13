@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 
@@ -21,32 +22,23 @@ internal fun AppBar(
     containerColor: Color = MaterialTheme.colorScheme.primary,
     titleContentColor: Color = MaterialTheme.colorScheme.onPrimary,
 ) {
-    val navigationIcon = createNavIcon(navIcon)
     TopAppBar(
         title = { Text(text = title) },
-        navigationIcon = navigationIcon,
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+        navigationIcon = rememberNavIcon(navIcon),
+        colors = TopAppBarDefaults.topAppBarColors(
             containerColor = containerColor,
-            titleContentColor = titleContentColor,
+            scrolledContainerColor = Color.Unspecified,
             navigationIconContentColor = titleContentColor,
-            actionIconContentColor = titleContentColor,
+            titleContentColor = titleContentColor,
+            actionIconContentColor = titleContentColor
         ),
         actions = actions
     )
 }
 
 @Composable
-private fun createNavIcon(
-    navIcon: AppBarIconModel?,
-): @Composable () -> Unit {
-    val navigationIcon: @Composable () -> Unit = if (navIcon == null) {
-        {}
-    } else {
-        {
-            AppBarIcon(navIcon = navIcon)
-        }
-    }
-    return navigationIcon
+private fun rememberNavIcon(navIcon: AppBarIconModel?): @Composable () -> Unit = remember(navIcon) {
+    if (navIcon == null) {{}} else {{ AppBarIcon(navIcon) }}
 }
 
 @Composable

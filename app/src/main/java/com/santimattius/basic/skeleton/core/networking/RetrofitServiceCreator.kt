@@ -11,7 +11,7 @@ class RetrofitServiceCreator(val baseUrl: String) {
         .addInterceptor(ExampleInterceptor())
         .build()
 
-    val retrofit = Retrofit.Builder()
+    val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
