@@ -8,6 +8,8 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.google.secrets.gradle.plugin)
     alias(libs.plugins.automattic.measure.builds)
+    alias(libs.plugins.screenshot)
+    jacoco
 }
 
 android {
@@ -21,11 +23,13 @@ android {
         versionCode = extraString("version_code").toInt()
         versionName = extraString("version_name")
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.santimattius.basic.skeleton.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
     }
+
+    experimentalProperties["android.experimental.enableScreenshotTest"] = true
 
     buildTypes {
         getByName("debug") {
@@ -87,6 +91,44 @@ detekt {
     autoCorrect = true
 }
 
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+tasks.register<JacocoReport>("jacocoTestReport") {
+    dependsOn("testDebugUnitTest")
+
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+
+    val fileFilter = listOf(
+        "**/R.class",
+        "**/R\$*.class",
+        "**/BuildConfig.*",
+        "**/Manifest*.*",
+        "**/*Test*.*",
+        "android/**/*.*",
+        "**/*_Factory.*",
+        "**/*_MembersInjector.*",
+        "**/Hilt_*.*",
+        "**/*_HiltModules*.*",
+        "**/dagger/hilt/**",
+    )
+    val kotlinDebugTree = fileTree(
+        layout.buildDirectory.dir("intermediates/built_in_kotlinc/debug/compileDebugKotlin/classes")
+    ) {
+        exclude(fileFilter)
+    }
+
+    sourceDirectories.setFrom(files("src/main/java", "src/main/kotlin"))
+    classDirectories.setFrom(files(kotlinDebugTree))
+    executionData.setFrom(fileTree(layout.buildDirectory) {
+        include("outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec")
+    })
+}
+
 measureBuilds {
     enable = true
     attachGradleScanId =
@@ -121,10 +163,19 @@ dependencies {
 
     testImplementation(platform(libs.compose.bom))
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.test.ext)
+    testImplementation(libs.compose.ui.test.junit)
 
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.compose.ui.test.junit)
     androidTestImplementation(libs.test.ext)
     androidTestImplementation(libs.test.espresso)
+    androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.compiler)
 
+    screenshotTestImplementation(platform(libs.compose.bom))
+    screenshotTestImplementation(libs.screenshot.validation.api)
+    screenshotTestImplementation(libs.compose.tooling)
 }

@@ -20,7 +20,9 @@ data class MainUiState(
 )
 
 @HiltViewModel
-class MainViewModel @Inject constructor() : ViewModel() {
+class MainViewModel @Inject constructor(
+    private val random: Random,
+) : ViewModel() {
     private val _state = MutableStateFlow(MainUiState())
     val state: StateFlow<MainUiState> = _state.onStart {
         sayHello()
@@ -33,7 +35,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
     fun sayHello() {
         _state.update { it.copy(isLoading = true) }
         viewModelScope.launch {
-            val message = if (Random.nextBoolean()) "Hello, Android!" else "Goodbye, Android!"
+            val message = if (random.nextBoolean()) "Hello, Android!" else "Goodbye, Android!"
             _state.update { it.copy(isLoading = false, message = message) }
         }
     }
