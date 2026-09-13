@@ -1,12 +1,6 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
 .DS_Store
 /build
 /captures
@@ -17,18 +11,4 @@ local.properties
 # Project exclude paths
 /plugins/build/
 /.kotlin/
-/.idea/
-/.idea/inspectionProfiles/
-/.idea/.gitignore
-/.idea/appInsightsSettings.xml
-/.idea/compiler.xml
-/.idea/deploymentTargetDropDown.xml
-/.idea/deploymentTargetSelector.xml
-/.idea/gradle.xml
-/.idea/jarRepositories.xml
-/.idea/kotlinc.xml
-/.idea/migrations.xml
-/.idea/misc.xml
-/.idea/runConfigurations.xml
-/.idea/vcs.xml
-/.idea/workspace.xml
+.idea/
