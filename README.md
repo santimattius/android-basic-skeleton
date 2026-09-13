@@ -2,8 +2,8 @@
 
 [![Codecov](https://codecov.io/gh/santimattius/android-basic-skeleton/branch/master/graph/badge.svg?token=HNW9TXKMQU)](https://codecov.io/gh/santimattius/android-basic-skeleton)
 [![Quality Checks](https://github.com/santimattius/android-basic-skeleton/actions/workflows/main.yml/badge.svg)](https://github.com/santimattius/android-basic-skeleton/actions)
-[![AGP 9.1.0](https://img.shields.io/badge/AGP-9.1.0-blue.svg)](https://developer.android.com/build/releases/gradle-plugin)
-[![Kotlin 2.2.10](https://img.shields.io/badge/Kotlin-2.2.10-purple.svg)](https://kotlinlang.org/docs/whatsnew20.html)
+[![AGP 9.4.0](https://img.shields.io/badge/AGP-9.4.0-blue.svg)](https://developer.android.com/build/releases/gradle-plugin)
+[![Kotlin 2.4.20](https://img.shields.io/badge/Kotlin-2.4.20-purple.svg)](https://kotlinlang.org/docs/whatsnew20.html)
 
 A production-ready Android skeleton project featuring modern architecture, essential build configurations, and automated quality checks. Designed to accelerate the development of high-quality Android applications.
 
@@ -28,11 +28,16 @@ The project follows modern Android development patterns:
 ```text
 ├── app/                  # Main application module
 │   ├── src/main/java/    # Source code (Hilt DI, UI Components, ViewModels)
-│   └── build.gradle.kts  # App-specific build configuration
+│   ├── src/test/         # Unit + Robolectric tests
+│   ├── src/androidTest/  # Instrumented tests (Hilt, device-only)
+│   ├── src/screenshotTest/ # Compose Preview Screenshot tests
+│   └── build.gradle.kts  # App-specific build configuration (incl. Jacoco)
 ├── config/               # Configuration files (Detekt, etc.)
+├── docs/
+│   └── testing.md        # Testing strategy: analysis, plan, and what's implemented
 ├── gradle/               # Gradle scripts and version catalog
-│   ├── coverage.gradle   # Jacoco coverage reporting logic
 │   └── libs.versions.toml # Centralized dependency management
+├── AGENTS.md             # Entry point for agent-facing project docs
 └── plugins/              # Custom build plugins
 ```
 
@@ -49,9 +54,14 @@ Run project-wide quality checks:
 ./gradlew check
 ```
 
-Execute unit tests:
+Execute unit tests (includes Robolectric-based Compose behavior tests):
 ```bash
-./gradlew test
+./gradlew :app:testDebugUnitTest
+```
+
+Execute instrumented tests (requires a connected device or emulator):
+```bash
+./gradlew :app:connectedDebugAndroidTest
 ```
 
 Run static analysis (Detekt):
@@ -59,13 +69,28 @@ Run static analysis (Detekt):
 ./gradlew :app:detekt
 ```
 
+### Screenshot Testing
+
+Update reference images after an intentional UI change:
+```bash
+./gradlew :app:updateDebugScreenshotTest
+```
+
+Validate the current UI against the committed reference images:
+```bash
+./gradlew :app:validateDebugScreenshotTest
+```
+*Reference images live at: `app/src/screenshotTestDebug/reference/`*
+
 ### Code Coverage Reports
 
-Generate Jacoco coverage for debug builds:
+Generate a Jacoco coverage report from unit tests:
 ```bash
-./gradlew :app:testDebugUnitTestCoverage
+./gradlew :app:jacocoTestReport
 ```
-*Reports are generated at: `app/build/reports/jacoco/`*
+*Report is generated at: `app/build/reports/jacoco/jacocoTestReport/html/index.html`*
+
+See [docs/testing.md](docs/testing.md) for the full testing strategy.
 
 ## 🔐 Configuration & Secrets
 
@@ -92,7 +117,7 @@ The project uses the `secrets-gradle-plugin`. To define API keys or sensitive da
 | **DI** | Hilt |
 | **Async** | Coroutines, Flow |
 | **Networking** | Retrofit, Gson, OkHttp |
-| **Testing** | JUnit 4, Mockk, MockWebServer, Compose Test |
+| **Testing** | JUnit 4, MockK, MockWebServer, Robolectric, Hilt Testing, Compose Test, Compose Preview Screenshot Testing, Jacoco |
 
 ---
 Maintainer: [Santiago Mattiauda](https://github.com/santimattius)
