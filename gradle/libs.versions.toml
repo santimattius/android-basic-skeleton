@@ -4,7 +4,7 @@ androidGradlePlugin = "9.4.0"
 kotlinGradlePlugin = "2.4.20"
 
 detektGradlePlugin = "1.23.8"
-ksp = "2.3.11"
+ksp = "2.3.12"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.2"
 # Core
