@@ -1,16 +1,16 @@
 [versions]
 # Plugins
-androidGradlePlugin = "9.4.0"
+androidGradlePlugin = "9.4.1"
 kotlinGradlePlugin = "2.4.21"
 
 detektGradlePlugin = "1.23.8"
 ksp = "2.3.12"
 googleSecretsPlugin = "2.0.1"
-automatticMeasureBuilds = "3.2.2"
+automatticMeasureBuilds = "3.2.3"
 # Core
 androidxComposeBom = "2026.09.00"
 activityCompose = "1.13.0"
-coreKtx = "1.19.0"
+coreKtx = "1.19.1"
 lifecycle = "2.11.0"
 
 retrofit = "3.0.0"
